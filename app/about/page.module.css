@@ -1,0 +1,350 @@
+/* ===== Base Styles ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.sectionTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #0A2463;
+  position: relative;
+  text-align: center;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #D8315B;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  max-width: 700px;
+  text-align: center;
+}
+
+/* ===== Hero Banner ===== */
+.aboutHero {
+  background: linear-gradient(rgba(10, 36, 99, 0.8), rgba(10, 36, 99, 0.8)), 
+              url('/about-hero.jpg') center/cover no-repeat;
+  color: white;
+  padding: 12rem 0 8rem;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* ===== Timeline Section ===== */
+.timelineSection {
+  background-color: #f9f9f9;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 5rem auto 0;
+  padding: 0 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: #D8315B;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.timelineItem:nth-child(odd) {
+  padding-right: calc(50% + 2rem);
+  text-align: right;
+}
+
+.timelineItem:nth-child(even) {
+  padding-left: calc(50% + 2rem);
+  text-align: left;
+}
+
+.timelineDot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #D8315B;
+  border: 4px solid white;
+  box-shadow: 0 0 0 4px #D8315B;
+}
+
+.timelineYear {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #D8315B;
+  margin-bottom: 0.5rem;
+}
+
+.timelineContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.timelineContent::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timelineItem:nth-child(odd) .timelineContent::after {
+  right: -15px;
+  border-width: 15px 0 15px 15px;
+  border-color: transparent transparent transparent white;
+}
+
+.timelineItem:nth-child(even) .timelineContent::after {
+  left: -15px;
+  border-width: 15px 15px 15px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* ===== Mission & Vision ===== */
+.missionVisionSection {
+  background: linear-gradient(135deg, #0A2463 0%, #1a3a8f 100%);
+  color: white;
+}
+
+.missionVisionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.missionCard, .visionCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.4s ease;
+}
+
+.missionCard:hover, .visionCard:hover {
+  transform: translateY(-10px);
+}
+
+.cardIcon {
+  font-size: 3rem;
+  color: #D8315B;
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* ===== HSE Policy ===== */
+.hseSection {
+  background-color: white;
+}
+
+.hseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.hseCard {
+  background-color: #f9f9f9;
+  padding: 2.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #D8315B;
+  transition: all 0.3s ease;
+}
+
+.hseCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hseIcon {
+  font-size: 2rem;
+  color: #D8315B;
+  margin-bottom: 1.5rem;
+}
+
+.hseTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #0A2463;
+}
+
+/* ===== Why Choose Us ===== */
+.whyChooseSection {
+  background-color: #f9f9f9;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.featureCard {
+  background-color: white;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #0A2463, #D8315B);
+}
+
+.featureCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+  font-size: 3rem;
+  color: #D8315B;
+  margin-bottom: 1.5rem;
+}
+
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #0A2463;
+}
+
+.featureDescription {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .section {
+    padding: 6rem 0;
+  }
+  
+  .heroTitle {
+    font-size: 3rem;
+  }
+  
+  .timeline::before {
+    left: 2rem;
+  }
+  
+  .timelineItem:nth-child(odd),
+  .timelineItem:nth-child(even) {
+    padding-left: calc(2rem + 20px);
+    padding-right: 0;
+    text-align: left;
+  }
+  
+  .timelineDot {
+    left: 2rem;
+  }
+  
+  .timelineItem:nth-child(odd) .timelineContent::after,
+  .timelineItem:nth-child(even) .timelineContent::after {
+    left: -15px;
+    border-width: 15px 15px 15px 0;
+    border-color: transparent white transparent transparent;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .missionVisionGrid,
+  .featuresGrid,
+  .hseGrid {
+    grid-template-columns: 1fr;
+  }
+}

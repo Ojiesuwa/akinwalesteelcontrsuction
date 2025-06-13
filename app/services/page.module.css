@@ -1,0 +1,244 @@
+/* ===== Base Styles ===== */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.sectionTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #0A2463;
+  position: relative;
+  text-align: center;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #D8315B;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  max-width: 700px;
+  text-align: center;
+}
+
+/* ===== Services Hero ===== */
+.servicesHero {
+  background: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.85)), 
+              url('/services-hero.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 8rem 0;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ===== Services Grid ===== */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.serviceCard {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 36, 99, 0.03) 0%, rgba(216, 49, 91, 0.03) 100%);
+  z-index: -1;
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.serviceImage {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.serviceCard:hover .serviceImage img {
+  transform: scale(1.05);
+}
+
+.serviceContent {
+  padding: 2rem;
+}
+
+.serviceIcon {
+  font-size: 2.5rem;
+  color: #D8315B;
+  margin-bottom: 1.5rem;
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #0A2463;
+}
+
+.serviceDescription {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.serviceLink {
+  color: #D8315B;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.serviceLink:hover {
+  color: #c02a4f;
+  gap: 1rem;
+}
+
+/* ===== Other Services ===== */
+.otherServices {
+  background-color: #f9f9f9;
+}
+
+.servicesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.serviceItem {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.serviceItemIcon {
+  color: #D8315B;
+  font-size: 1.2rem;
+}
+
+/* ===== CTA Section ===== */
+.ctaSection {
+  background: linear-gradient(135deg, #0A2463 0%, #1a3a8f 100%);
+  color: white;
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.ctaButton {
+  background-color: #D8315B;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.ctaButton:hover {
+  background-color: #c02a4f;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(216, 49, 91, 0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .section {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .serviceImage {
+    height: 180px;
+  }
+}

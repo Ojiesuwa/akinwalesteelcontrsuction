@@ -1,0 +1,131 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(10, 36, 99, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.headerScrolled {
+  background-color: rgba(10, 36, 99, 0.98);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.logoText {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.logoHighlight {
+  color: #d8315b;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #d8315b;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #d8315b;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.ctaButton {
+  background-color: #d8315b;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.ctaButton:hover {
+  background-color: #c02a4f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(216, 49, 91, 0.3);
+}
+
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: rgba(10, 36, 99, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+    transition: left 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .navActive {
+    left: 0;
+  }
+}

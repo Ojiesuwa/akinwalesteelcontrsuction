@@ -1,0 +1,294 @@
+/* ===== Base Styles ===== */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.sectionTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #0A2463;
+  position: relative;
+  text-align: center;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #D8315B;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  max-width: 700px;
+  text-align: center;
+}
+
+/* ===== Projects Hero ===== */
+.projectsHero {
+  background: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.85)), 
+              url('/projects-hero.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 8rem 0;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ===== Projects Filter ===== */
+.filterControls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filterButton {
+  background: transparent;
+  color: #0A2463;
+  border: 1px solid #ddd;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterButton:hover {
+  border-color: #0A2463;
+}
+
+.filterButton.active {
+  background-color: #0A2463;
+  color: white;
+  border-color: #0A2463;
+}
+
+/* ===== Projects Grid ===== */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.projectCard {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  aspect-ratio: 4/3;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.05);
+}
+
+.projectOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(10, 36, 99, 0.8), transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.projectCard:hover .projectOverlay {
+  opacity: 1;
+}
+
+.projectTitle {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease 0.1s;
+}
+
+.projectTag {
+  background-color: #D8315B;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.projectCard:hover .projectTitle,
+.projectCard:hover .projectTags {
+  transform: translateY(0);
+}
+
+/* ===== Lightbox Modal ===== */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightboxImage {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.lightboxNav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.lightboxButton {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.lightboxButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .section {
+    padding: 5rem 0;
+  }
+  
+  .projectsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+  
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .projectCard {
+    aspect-ratio: 3/2;
+  }
+  
+  .projectOverlay {
+    opacity: 1;
+    padding: 1rem;
+  }
+  
+  .projectTitle,
+  .projectTags {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .filterControls {
+    justify-content: flex-start;
+  }
+}
