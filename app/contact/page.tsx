@@ -47,7 +47,7 @@ export default function ContactPage() {
                 project discussions.
               </p>
               <a
-                href="https://wa.me/2348023312323"
+                href="https://wa.me/+2348038511816"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.channelButton} ${styles.whatsappButton}`}
