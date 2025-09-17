@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
+import Image from "next/image";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,6 +32,7 @@ const Header = () => {
     >
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
+          <Image src={"/logo.jpg"} width={35} height={35} alt="/logo" />
           <span className={styles.logoText}>
             AKINWALE <span className={styles.logoHighlight}>STEEL</span>
           </span>

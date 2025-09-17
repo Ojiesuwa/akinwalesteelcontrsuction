@@ -48,6 +48,20 @@ const projects = [
     tags: ["Insulation", "Pipe Welding"],
     category: "industrial",
   },
+  {
+    id: 7,
+    title: "Culinary Industrial Stairs",
+    image: "/project8.jpg",
+    tags: ["Argon Welding", "Professional Fitting"],
+    category: "industrial",
+  },
+  {
+    id: 8,
+    title: "Industrial Machine Installation",
+    image: "/project7.jpg",
+    tags: ["Argon Welding"],
+    category: "industrial",
+  },
 ];
 
 // Categories for filtering
