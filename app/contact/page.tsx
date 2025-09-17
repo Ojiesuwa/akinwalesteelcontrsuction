@@ -103,9 +103,8 @@ export default function ContactPage() {
               <p className={styles.infoContent}>
                 <a href="tel:+2348023312323">+234 802 331 2323</a>
                 <br />
-                <a href="tel:+2348038511816">+234 803 851 1816</a>
+                <a href="tel:+2348038511816">Calls: +234 803 851 1816</a>
                 <br />
-                <a href="tel:+2348028588419">+234 802 858 8419</a>
               </p>
             </div>
 
@@ -116,9 +115,9 @@ export default function ContactPage() {
               </div>
               <h3 className={styles.infoTitle}>Working Hours</h3>
               <p className={styles.infoContent}>
-                Monday - Friday: 8am - 6pm
+                Monday - Friday: 8am - 5pm
                 <br />
-                Saturday: 9am - 2pm
+                Saturday: 10am - 2pm
                 <br />
                 Sunday: Closed
               </p>
